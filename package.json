@@ -1,5 +1,5 @@
 {
-  "name": "editorjs-toggle-block",
+  "name": "miguelnietoa-editorjs-toggle-block",
   "version": "0.3.2",
   "description": "Toogle block tool for Editor.js",
   "main": "./dist/bundle.js",
