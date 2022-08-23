@@ -12,3 +12,4 @@ updates:
     target-branch: "v0.2"
     schedule:
       interval: "daily"
+
