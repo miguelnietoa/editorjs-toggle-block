@@ -19,9 +19,7 @@ jobs:
       security-events: write
       # Used to receive a badge. (Upcoming feature)
       id-token: write
-      # Needs for private repositories.
-      contents: read
-      actions: read
+
 
     steps:
       - name: Harden Runner
