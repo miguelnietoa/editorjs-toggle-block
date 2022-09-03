@@ -1,5 +1,8 @@
 # EditorJS Toggle Block
 
+[![OpenSSF
+Scorecard](https://api.securityscorecards.dev/projects/github.com/miguelnietoa/editorjs-toggle-block/badge)](https://api.securityscorecards.dev/projects/github.com//miguelnietoa/editorjs-toggle-block)
+
 Toggle block tool for [Editor.js](https://editorjs.io/)
 
 ![](assets/demo.gif)
