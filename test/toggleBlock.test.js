@@ -359,4 +359,25 @@ describe('ToggleBlock', () => {
       expect(numberOfChildren).toBe(toggleBlock.data.items);
     });
   });
+
+   describe('validates the highlightToggleItems method', () => {
+    let toggle;
+    let redactor;
+
+    beforeEach(() => {
+      redactor = document.querySelector('div.codex-editor__redactor');
+      toggle = generateFullToggle(toggleBlock, data);
+      toggle.forEach((block) => redactor.appendChild(block));
+    });
+
+    it("Adds the ce-block--selected class to the toggle's children", () => {
+      toggleBlock.render();
+      const { id } = toggleBlock.wrapper;
+      toggleBlock.highlightToggleItems(id);
+      const children = redactor.querySelectorAll(`div[foreignKey="${id}"]`);
+      children.forEach((child) => {
+        expect(child.classList.contains('ce-block--selected')).toBe(false);
+      });
+    });
+  });
 });
