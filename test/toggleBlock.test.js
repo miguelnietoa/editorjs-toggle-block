@@ -359,6 +359,4 @@ describe('ToggleBlock', () => {
       expect(numberOfChildren).toBe(toggleBlock.data.items);
     });
   });
-
-  
 });
