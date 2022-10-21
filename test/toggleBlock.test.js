@@ -360,7 +360,7 @@ describe('ToggleBlock', () => {
     });
   });
 
-   describe('validates the highlightToggleItems method', () => {
+  describe('validates the highlightToggleItems method', () => {
     let toggle;
     let redactor;
 
