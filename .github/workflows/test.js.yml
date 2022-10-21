@@ -14,7 +14,7 @@ permissions: # added using https://github.com/step-security/secure-workflows
   contents: read
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
 
     strategy:
@@ -43,3 +43,18 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm test
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }
+          flag-name: run-node-${{ matrix.node-version }}
+          parallel: true
+  finish:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        parallel-finished: true
