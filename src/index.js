@@ -493,10 +493,13 @@ export default class ToggleBlock {
       }
     } else {
       const toggle = this.wrapper.children[1];
+      console.log('toggle', toggle);
       let currentBlock = {};
       let index = this.api.blocks.getCurrentBlockIndex();
       console.log('index', index);
       console.log('blocksInEditor', blocksInEditor);
+
+      const delta = (index === blocksInEditor - 1) ? -1 : 1;
 
       while (currentBlock[1] !== toggle) {
         toggleRoot = index;
@@ -508,7 +511,8 @@ export default class ToggleBlock {
         console.log('index', index);
         console.log('currentBlock', currentBlock[1]);
 
-        index -= 1;
+        index += delta;
+        console.log('index', index);
       }
     }
 
