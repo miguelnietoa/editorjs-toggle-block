@@ -19,7 +19,7 @@ jobs:
       security-events: write
       # Used to receive a badge.
       id-token: write
-      issues: read
+      pull-requests: read
       
 
     steps:
