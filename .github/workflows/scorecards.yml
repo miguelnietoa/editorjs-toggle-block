@@ -19,6 +19,8 @@ jobs:
       security-events: write
       # Used to receive a badge.
       id-token: write
+      issues: read
+      pull-requests: read
 
     steps:
       - name: Harden Runner
@@ -36,6 +38,7 @@ jobs:
             rekor.sigstore.dev:443
             sigstore-tuf-root.storage.googleapis.com:443
             objects.githubusercontent.com:443
+            www.bestpractices.dev:443
       - name: "Checkout code"
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
         with:
